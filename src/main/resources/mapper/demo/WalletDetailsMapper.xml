@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.WalletDetailsMapper">
+
+    <select id="findWalletDatails" resultType="com.example.demo.entity.WalletDetails">
+        select balance from wallet_details where id=#{id}
+    </select>
+
+    <insert id="addWalletDatails" parameterType="com.example.demo.entity.WalletDetails">
+        insert into wallet_details values (#{id},#{balance},#{change_balance},#{update_time},#{type},#{Userid})
+    </insert>
+
+    <select id="findAllWalletDatails" resultType="com.example.demo.entity.WalletDetails">
+        select * from wallet_datails
+    </select>
+</mapper>
